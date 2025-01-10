@@ -36,3 +36,15 @@ export async function handleGetUrl(req, res) {
     }
     res.redirect(entry.redirecturl);
 }
+
+export async function handleGetAnalytics(req, res){
+    const shortId = req.params.shortId;
+
+    const url = await URL.findOne({
+        shortid : shortId
+    })
+    
+    if(!url) return res.status(404).json({"error":"Invalid ShortId"});
+
+    res.json({"Visited":url.visited.length});
+};
