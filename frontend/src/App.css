@@ -1,0 +1,71 @@
+body{
+  height: 100vh;
+  width: 100%;
+  margin: 0px;
+  font-family: sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(43, 41, 41);
+}
+
+.signup-container{
+  width:600px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 5px solid rgb(255, 255, 255);
+  border-radius: 20px;
+  box-shadow: 0 6px 10px 2px rgba(255, 255, 255, 0.509), 0 6px 20px 2px rgba(0, 0, 0, 0.19);
+}
+.div-container1{
+  margin: auto;
+  color:white;
+}
+.div-container2{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  border-left: 3px solid rgb(255, 255, 255);
+  background-color: gray;
+  color: rgb(0, 0, 0);
+  width: 50%;
+  border-top-right-radius: 13px;
+  border-bottom-right-radius: 13px;
+  padding: 15px;
+}
+.div-container2 input{
+  width: 90%;
+  padding: 8px;
+  border: 0px;
+  padding-left: 10px;
+  border-radius: 20px;
+  font-family: sans-serif;
+  font-size: medium;
+}
+.div-container2 input::placeholder{
+    color: rgba(146, 143, 143, 0.648);
+}
+
+.div-container2 label{
+  margin: 4% 0;
+  text-align: start;
+  width: 90%;
+  font-weight: bolder;
+}
+.div-container2 button{
+  text-align: center;
+  margin: 0px 10px 10px 10px;
+  padding: 10px;
+  width: 30%;
+  border-radius: 20px;
+  background-color: rgb(0, 0, 0);
+  border: 0px;
+  color: white;
+  cursor: pointer;
+}
+.div-container2 button:hover{
+  background-color: rgb(255, 255, 255);
+  color: black;
+}
