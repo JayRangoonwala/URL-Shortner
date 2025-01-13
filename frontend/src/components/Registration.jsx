@@ -1,7 +1,11 @@
 import React, { useState } from "react";
 import { Link,useNavigate } from "react-router-dom";
+// import { useLogginContext } from "../context/userlogin";
 
 const Registration = () => {
+
+  // const LogginDetails = useLogginContext();
+
   const [signupData, setSignupData] = useState({
     email: "",
     username: "",
@@ -45,6 +49,7 @@ const Registration = () => {
   };
 
   return (
+    <div className="outer-container">
     <div className="signup-container">
       <div className="div-container1">
         <h1>Sign Up</h1>
@@ -87,6 +92,7 @@ const Registration = () => {
         <button onClick={handleSignup}>Sign Up</button>
       </div>
     </div>
+  </div>
   );
 };
 

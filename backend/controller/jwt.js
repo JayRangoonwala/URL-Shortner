@@ -14,7 +14,8 @@ export const getToken = (req,res) => {
     const token = req.cookies?.uid;
     
     if(!token){
-        return res.json({error:"Unauthorized user !!!"});
+        console.log("No Token");
+        return res.status(400).json({LoginError:"Please Login !!!"});
     }
     try {
         const decoded = jwt.verify(token, Secret_key);

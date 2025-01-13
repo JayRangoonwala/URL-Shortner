@@ -1,19 +1,23 @@
 import "./App.css";
-import Home from "./components/Home";
+import Home from "./screens/Home";
 import Login from "./components/Login";
 import Registration from "./components/Registration";
 import { Routes, Route } from "react-router-dom";
+import {RedirectUrl} from './components/redirecturl';
+// import { useLogginContext } from "./context/userlogin";
+
 function App() {
 
   return (
     <>
-    <Routes>
-      <Route path="/" element={<Home />}/>
-      <Route path="user">
-        <Route path="signup" element={<Registration />} />
-        <Route path="login" element={<Login />} />
-      </Route>
-    </Routes>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/:shorturl" element={<RedirectUrl />}/>
+        <Route path="user">
+          <Route path="signup" element={<Registration />} />
+          <Route path="login" element={<Login />} />
+        </Route>
+      </Routes>
     </>
   );
 }

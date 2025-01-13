@@ -45,7 +45,7 @@ export const handleUserLogin = async (req, res) => {
       return res.status(400).json({ error: "Invalid Password !!" });
     }
 
-    const token = setToken({id: User._id , username: User.username},{expiresIn:"1h"})
+    const token = setToken({id: user._id , username: user.username},{expiresIn:"1h"})
 
     if(!token){
         return res.status(400).json({ error: "Problem In Login" });

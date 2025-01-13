@@ -14,7 +14,11 @@ const urlSchema = new mongoose.Schema({
         timestamp:{
             type:Number
         }
-    }]
+    }],
+    createdby:{
+        type: String,
+        required : true
+    }
 },
 {timestamps: true,}
 );
