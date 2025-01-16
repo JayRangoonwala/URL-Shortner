@@ -14,12 +14,10 @@ export const getToken = (req,res) => {
     const token = req.cookies?.uid;
     
     if(!token){
-        console.log("No Token");
         return res.status(400).json({LoginError:"Please Login !!!"});
     }
     try {
         const decoded = jwt.verify(token, Secret_key);
-        console.log("Token verified:", decoded);
         return decoded;
     } catch (error) {
         console.error("Token verification failed:", error.message);

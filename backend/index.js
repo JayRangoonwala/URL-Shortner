@@ -4,6 +4,7 @@ import { router } from './routes/url.js';
 import {userrouter} from './routes/user.js'
 import cors from 'cors';
 import cookieParser from 'cookie-parser';
+import { analyticRouter } from './routes/analytics.js';
 
 const app = express();
 const PORT = 8000;
@@ -15,6 +16,7 @@ app.use(cookieParser())
 
 app.use("/url",router);
 app.use("/user",userrouter);
+app.use("/analysis",analyticRouter);
 
 Connect("mongodb://localhost:27017/ShortnerUrl")
 .then(() => console.log("MongoDb Connected !!"));

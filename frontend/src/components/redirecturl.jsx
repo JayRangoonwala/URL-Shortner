@@ -16,8 +16,9 @@ export const RedirectUrl = () => {
             })
 
             if(!response.ok){
-                const data = await response.json();
+                // const data = await response.json();
                 alert(data.error)
+                return
             }
             const data = await response.json();
             if(data.redirectUrl){
@@ -27,6 +28,6 @@ export const RedirectUrl = () => {
         
         fetchData();
 
-    },[shorturl])
+    },[])
     return <div className="loader"><img src={loader} alt="Loading" /></div>
 }

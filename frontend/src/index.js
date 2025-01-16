@@ -8,13 +8,11 @@ import { LoggedinProvider } from "./context/userlogin";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
-  <React.StrictMode>
     <LoggedinProvider>
       <BrowserRouter>
         <App />
       </BrowserRouter>
     </LoggedinProvider>
-  </React.StrictMode>
 );
 
 // If you want to start measuring performance in your app, pass a function

@@ -6,6 +6,6 @@ export const router = Router();
 
 router.post('/' , handleAuth ,handleGenerateNewShortUrl);
 
-router.get("/:shortId" ,handleGetUrl);
+router.get("/:shortId" ,handleAuth,handleGetUrl);
 
 router.get("/analytics/:shortId",handleGetAnalytics);

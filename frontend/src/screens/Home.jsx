@@ -1,15 +1,17 @@
-import React,{useState} from "react";
+import React,{ useState} from "react";
 import { Link, useNavigate } from "react-router-dom";
-// import { useLogginContext } from "../context/userlogin";
+import { useLogginContext } from "../context/userlogin";
 
 const Home = () => {
 
   const [url,seturl] = useState({url:""})
   const [isshorturl,setIsShorturl] = useState(false);
   const [shortUrl,setShortUrl] = useState("");
+  const LogginDetails = useLogginContext();
+  
 
   const navigate = useNavigate();
-
+  console.log(LogginDetails.isLoggedin);
   const handlechange = (e) => {
     seturl({...url,[e.target.name] : e.target.value})
   }
@@ -66,14 +68,39 @@ const Home = () => {
     navigator.clipboard.writeText(copytext.textContent)
   }
 
+  const loggout = async() => {
+    try{
+      const response = await fetch("http://localhost:8000/user/loggout",{
+      method:"post",
+      credentials : "include"
+    });
+    if(response.ok){
+      const data = await response.json();
+      alert(data.message);
+      LogginDetails.setIsLoggedin(false)
+    }
+  }
+    catch(error){
+      console.log(error)
+    }
+  }
+    
   return (
       <div className="home">
         <nav>
         <h1>URL-SHORTNER</h1>
         <ul>
           <Link to={'/'} className="link">Home</Link>
-          <Link to={'/user/signup'} className="link">Sign Up</Link>
-          <Link to={'/user/login'} className="link">Login</Link>
+          {
+            LogginDetails.isLoggedin ?
+            <button onClick={loggout}>Log Out</button>
+            :
+            <>
+            <Link to={'/user/signup'} className="link">Sign Up</Link>
+            <Link to={'/user/login'} className="link">Login</Link>
+            </>
+          }
+          
         </ul>
         </nav>
   
@@ -94,58 +121,6 @@ const Home = () => {
             </div>
             : null
           }
-          
-        <h2>Analytics</h2>
-        <div className="analytics-Container">
-          <table>
-            <thead>
-            <tr>
-              <th>Index No.</th>
-              <th>Short URL</th>
-              <th>Created At</th>
-              <th>Visited</th>
-            </tr>
-            </thead>
-            <tbody>
-              <tr>
-              <td>Index No.</td>
-              <td>Short URL</td>
-              <td>Created At</td>
-              <td>Visited</td>
-            </tr>
-            <tr>
-              <td>Index No.</td>
-              <td>Short URL</td>
-              <td>Created At</td>
-              <td>Visited</td>
-            </tr>
-            <tr>
-              <td>Index No.</td>
-              <td>Short URL</td>
-              <td>Created At</td>
-              <td>Visited</td>
-            </tr>
-            <tr>
-              <td>Index No.</td>
-              <td>Short URL</td>
-              <td>Created At</td>
-              <td>Visited</td>
-            </tr>
-            <tr>
-              <td>Index No.</td>
-              <td>Short URL</td>
-              <td>Created At</td>
-              <td>Visited</td>
-            </tr>
-            <tr>
-              <td>Index No.</td>
-              <td>Short URL</td>
-              <td>Created At</td>
-              <td>Visited</td>
-            </tr>
-            </tbody>
-          </table>
-        </div>
         </div>
       </div> 
     );
