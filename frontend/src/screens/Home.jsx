@@ -1,6 +1,7 @@
 import React,{ useState} from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { useLogginContext } from "../context/userlogin";
+import Navbar from "../components/Navbar";
 
 const Home = () => {
 
@@ -12,6 +13,7 @@ const Home = () => {
 
   const navigate = useNavigate();
   console.log(LogginDetails.isLoggedin);
+
   const handlechange = (e) => {
     seturl({...url,[e.target.name] : e.target.value})
   }
@@ -68,44 +70,13 @@ const Home = () => {
     navigator.clipboard.writeText(copytext.textContent)
   }
 
-  const loggout = async() => {
-    try{
-      const response = await fetch("http://localhost:8000/user/loggout",{
-      method:"post",
-      credentials : "include"
-    });
-    if(response.ok){
-      const data = await response.json();
-      alert(data.message);
-      LogginDetails.setIsLoggedin(false)
-    }
-  }
-    catch(error){
-      console.log(error)
-    }
-  }
+  
     
   return (
       <div className="home">
-        <nav>
-        <h1>URL-SHORTNER</h1>
-        <ul>
-          <Link to={'/'} className="link">Home</Link>
-          {
-            LogginDetails.isLoggedin ?
-            <button onClick={loggout}>Log Out</button>
-            :
-            <>
-            <Link to={'/user/signup'} className="link">Sign Up</Link>
-            <Link to={'/user/login'} className="link">Login</Link>
-            </>
-          }
-          
-        </ul>
-        </nav>
-  
+      <Navbar/>
         <div className="main-container">
-          <h1>Paste the URL to be shortened</h1>
+          <h1 className="mb-2 text-lg">Paste the URL to be shortened</h1>
           <div className="form-container">
             <form>
           <input type="text" name="url" placeholder="Enter Your Link Here" className="url-input" autoComplete="off" onChange={handlechange}/>

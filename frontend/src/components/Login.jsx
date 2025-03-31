@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useLogginContext } from "../context/userlogin";
+import Navbar from "./Navbar";
 
 const Login = () => {
   
@@ -36,7 +37,11 @@ const Login = () => {
   };
 
   return (
-    <div className="outer-container">
+    <section className="w-full h-screen">
+      <header className="z-10 absolute top-0 w-full">
+        <Navbar />
+      </header>
+      <main className="flex justify-center items-center h-screen">
       <div className="signup-container">
         <div className="div-container1">
           <h1>Login</h1>
@@ -49,17 +54,17 @@ const Login = () => {
             placeholder="Enter Email"
             name="email"
             onChange={handleOnChange}
-          />
+            />
 
           <label htmlFor="password">Password</label>
           <input type="password" name="password" onChange={handleOnChange} />
 
-          <p>
+          <p className="mt-2">
             Don't Have An Account ?
             <Link
               to={"/user/signup"}
-              style={{ color: "White", fontWeight: "bolder" }}
-            >
+              style={{ color: "black", fontWeight: "bolder" }}
+              >
               {" "}
               Sign Up
             </Link>
@@ -68,7 +73,9 @@ const Login = () => {
           <button onClick={handleLogin}>Log in</button>
         </div>
       </div>
-    </div>
+              </main>
+      </section>
+
   );
 };
 

@@ -1,9 +1,13 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 body{
-  height: 100%;
+  height: 100vh;
   width: 100%;
   margin: 0px;
   font-family: sans-serif;
-  background-color: rgb(43, 41, 41);
+  @apply bg-slate-50 bg-gradient-to-r from-blue-300 to-yellow-100
 }
 
 .outer-container{
@@ -12,11 +16,10 @@ body{
     left: 0;
     width: 100%;
     height: 100vh;
-    background-color: rgb(43, 41, 41);
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 1000;
+    @apply bg-slate-50 bg-gradient-to-r from-blue-300 to-yellow-100
   /* display: flex;
   align-items: center;
   justify-content: center;
@@ -32,11 +35,12 @@ body{
   border: 5px solid rgb(255, 255, 255);
   border-radius: 20px;
   box-shadow: 0 6px 10px 2px rgba(255, 255, 255, 0.509), 0 6px 20px 2px rgba(0, 0, 0, 0.19);
-  background-color: black;
+  @apply bg-slate-50 bg-gradient-to-br from-blue-400 to-yellow-300 grid grid-cols-2
 }
 .div-container1{
   margin: auto;
-  color:white;
+  color:black;
+  font-size: x-large;
 }
 .div-container2{
   display: flex;
@@ -44,46 +48,42 @@ body{
   justify-content: center;
   flex-direction: column;
   border-left: 3px solid rgb(255, 255, 255);
-  background-color: gray;
-  color: rgb(0, 0, 0);
-  width: 50%;
+  color: rgb(65, 60, 60);
   border-top-right-radius: 13px;
   border-bottom-right-radius: 13px;
   padding: 15px;
 }
 .div-container2 input{
-  width: 90%;
+  width: 100%;
   padding: 8px;
   border: 0px;
-  padding-left: 10px;
+  padding-left: 20px;
   border-radius: 20px;
   font-family: sans-serif;
   font-size: medium;
+  outline: none;
+  @apply bg-slate-200
 }
 .div-container2 input::placeholder{
     color: rgba(146, 143, 143, 0.648);
 }
 
 .div-container2 label{
-  margin: 4% 0;
+  margin: 5px 0;
   text-align: start;
   width: 90%;
   font-weight: bolder;
 }
 .div-container2 button{
   text-align: center;
-  margin: 0px 10px 10px 10px;
+  margin: 10px 10px 2px 10px;
   padding: 10px;
   width: 30%;
   border-radius: 20px;
-  background-color: rgb(0, 0, 0);
   border: 0px;
   color: white;
   cursor: pointer;
-}
-.div-container2 button:hover{
-  background-color: rgb(255, 255, 255);
-  color: black;
+  @apply bg-gradient-to-r from-blue-600 to-blue-500 hover:scale-[1.05] ease-in-out transition
 }
 
 .home{
@@ -98,11 +98,9 @@ body{
 nav{
   display: flex;
   align-items: center;
-  justify-content: space-evenly;
-  height: 10%;
+  justify-content: space-between;
   width: 100%;
-  gap: 50%;
-  background-color: rgba(111, 85, 243, 0.596);
+  @apply bg-gradient-to-r from-blue-600 to-yellow-500 rounded-full mt-2 p-3 border-2 border-yellow-300
 }
 nav ul{
   display: flex;
@@ -124,15 +122,15 @@ nav ul button:hover{
 }
 
 nav ul .link{
-  padding: 10px;
-  color: #ffffff;
+  padding: 7px 10px;
+  color: white;
   text-decoration: none;
 }
 nav ul .link:hover{
-  background-color: rgb(0, 0, 0);
   cursor: pointer;
   border-radius: 15px;
-  transform: scale(1.1);
+  transform: scale(1.05);
+  @apply bg-blue-600 ease-in-out text-white
 }
 .main-container{
   display: flex;
@@ -141,6 +139,7 @@ nav ul .link:hover{
   flex-direction: column;
   height: 100vh;
   width: 100%;
+  @apply text-gray-700
 }
 
 .form-container{
@@ -158,29 +157,29 @@ nav ul .link:hover{
   padding: 15px;
   border-top-left-radius: 20px;
   border-bottom-left-radius: 20px;
-  background-color: rgba(255, 255, 255, 0.317);
   border: 0;
-  color: rgb(255, 255, 255);
+  color: rgb(46, 46, 46);
   font-size: larger;
   padding-left: 20px;
+  outline: none;
+  @apply bg-gradient-to-r from-slate-400 to-slate-300
 }
 .main-container input::placeholder{
-  color: rgba(3, 3, 3, 0.637);
+  color: rgba(3, 3, 3, 0.368);
 }
 .main-container button{
-  background-color: rgba(111, 85, 243, 0.781);
   border: 0;
   border-top-right-radius: 20px;
   border-bottom-right-radius: 20px;
   padding: 20px;
   color:white;
   font-size: medium;
+  @apply bg-gradient-to-r from-blue-500 to-blue-600
 }
 
 .main-container button:hover{
   cursor: pointer;
   background-color: rgb(111, 85, 243);
-  transform: scale(1.04);
 }
 .loader{
   background-color: transparent;
@@ -203,7 +202,9 @@ nav ul .link:hover{
   padding-left: 10px;
   border-radius: 20px;
   margin-left: 10px;
+  align-items: center;
 }
+
 .shorturl #url{
   color: #ff01019a;
   padding-right: 10px;
@@ -215,6 +216,8 @@ nav ul .link:hover{
   display: flex;
   margin-top: 50px;
   justify-content: center;
+  align-items: center;
+  width: 100%;
   /* background-color: rgba(240, 248, 255, 0.189); */
 }
 h2,.analytics-Container{

@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { Link,useNavigate } from "react-router-dom";
 // import { useLogginContext } from "../context/userlogin";
+import '../App.css'
+import Navbar from "./Navbar";
 
 const Registration = () => {
 
@@ -49,7 +51,12 @@ const Registration = () => {
   };
 
   return (
-    <div className="outer-container">
+    <section className="w-full h-screen">
+    <header className="z-10  absolute top-0 w-full">
+      <Navbar/>
+    </header>
+    <main className="flex justify-center items-center h-full overflow-hidden">
+
     <div className="signup-container">
       <div className="div-container1">
         <h1>Sign Up</h1>
@@ -78,11 +85,11 @@ const Registration = () => {
         <label htmlFor="cpassword">Confirm Password</label>
         <input type="password" name="cpassword" onChange={handleOnChange} />
 
-        <p>
+        <p className="mt-2">
           Already Have An Account ?
           <Link
             to={"/user/login"}
-            style={{ color: "White", fontWeight: "bolder" }}
+            style={{ color: "Black", fontWeight: "bolder" }}
           >
             {" "}
             Log in
@@ -92,7 +99,8 @@ const Registration = () => {
         <button onClick={handleSignup}>Sign Up</button>
       </div>
     </div>
-  </div>
+    </main>
+  </section>
   );
 };
 
