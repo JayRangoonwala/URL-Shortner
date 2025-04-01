@@ -1,6 +1,5 @@
 import React,{ useState} from "react";
 import { useNavigate } from "react-router-dom";
-import { useLogginContext } from "../context/userlogin";
 import Navbar from "../components/Navbar";
 
 const Home = () => {
@@ -8,11 +7,8 @@ const Home = () => {
   const [url,seturl] = useState({url:""})
   const [isshorturl,setIsShorturl] = useState(false);
   const [shortUrl,setShortUrl] = useState("");
-  const LogginDetails = useLogginContext();
-  
 
   const navigate = useNavigate();
-  console.log(LogginDetails.isLoggedin);
 
   const handlechange = (e) => {
     seturl({...url,[e.target.name] : e.target.value})
@@ -68,9 +64,9 @@ const Home = () => {
   const copyText = (e) => {
     var copytext = document.getElementById("url");
     navigator.clipboard.writeText(copytext.textContent)
+    
+    document.getElementById('button').innerHTML = "Copied....";
   }
-
-  
     
   return (
       <div className="home">
@@ -88,7 +84,7 @@ const Home = () => {
             <div className="out-shorturl"> 
               <h3>Short URL :</h3>
               <div className="shorturl"><h3 id="url"> http://localhost:3000/{shortUrl}</h3>
-              <button onClick={copyText}>Copy URL</button></div>
+              <button onClick={copyText} id="button">Copy URL</button></div>
             </div>
             : null
           }

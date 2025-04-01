@@ -26,9 +26,10 @@ const Login = () => {
       credentials: "include",
     });
     if (response.ok) {
-      setTimeout(() => {
+      setTimeout(async() => {
         navigate("/");
-        LogginDetails.setIsLoggedin(true)
+        const data = await response.json();
+        LogginDetails.setIsLoggedin(data.token)
       }, 100);
     } else {
       const data = await response.json();

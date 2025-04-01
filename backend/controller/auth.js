@@ -51,7 +51,7 @@ export const handleUserLogin = async (req, res) => {
         return res.status(400).json({ error: "Problem In Login" });
     }
     res.cookie("uid",token,{
-      httpOnly: true,
+      httpOnly: false,
       secure: false, // Use true in production with HTTPS
       sameSite: "lax",
     });

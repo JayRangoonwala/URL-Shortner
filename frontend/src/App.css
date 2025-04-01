@@ -157,12 +157,11 @@ nav ul .link:hover{
   padding: 15px;
   border-top-left-radius: 20px;
   border-bottom-left-radius: 20px;
-  border: 0;
   color: rgb(46, 46, 46);
   font-size: larger;
   padding-left: 20px;
   outline: none;
-  @apply bg-gradient-to-r from-slate-400 to-slate-300
+  @apply bg-gradient-to-r from-slate-400 to-slate-300 border-2 border-t-blue-600 border-b-yellow-400 border-l-yellow-400
 }
 .main-container input::placeholder{
   color: rgba(3, 3, 3, 0.368);
@@ -196,13 +195,14 @@ nav ul .link:hover{
 
 .shorturl{
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   background-color: rgba(255, 255, 255, 0.311);
-  width: max-content;
+  width: 350px;
   padding-left: 10px;
   border-radius: 20px;
   margin-left: 10px;
   align-items: center;
+  @apply text-lg
 }
 
 .shorturl #url{
@@ -226,14 +226,15 @@ h2,.analytics-Container{
   width: 100%; /* Ensure the element has width */ /* Add height if it’s empty */ /* Test visibility */
 }
 table{
-  border: 2px solid white;
   border-collapse: collapse;
   width: 80%;
   text-align: center;
+  
 }
 table th,td{
-  border: 2px solid white;
+  /* border: 2px solid white; */
   padding: 10px;
+  @apply border-2 border-blue-600
 }
 .container{
   width: 100%;
