@@ -1,6 +1,7 @@
 import React,{ useState} from "react";
 import { useNavigate } from "react-router-dom";
 import Navbar from "../components/Navbar";
+import "../App.css"
 
 const Home = () => {
 
@@ -12,7 +13,7 @@ const Home = () => {
 
   const handlechange = (e) => {
     seturl({...url,[e.target.name] : e.target.value})
-  }
+  }   
 
   const UrlValidation = (url) => {
 
@@ -63,28 +64,30 @@ const Home = () => {
 
   const copyText = (e) => {
     var copytext = document.getElementById("url");
-    navigator.clipboard.writeText(copytext.textContent)
+    navigator.clipboard.writeText(copytext.value)
     
     document.getElementById('button').innerHTML = "Copied....";
   }
     
   return (
       <div className="home">
-      <Navbar/>
+        <header className="absolute top-0 w-full">
+          <Navbar/>
+        </header>
         <div className="main-container">
           <h1 className="mb-2 text-lg">Paste the URL to be shortened</h1>
           <div className="form-container">
             <form>
           <input type="text" name="url" placeholder="Enter Your Link Here" className="url-input" autoComplete="off" onChange={handlechange}/>
-          <button onClick={handleUrl}>Shorten URL</button>
+          <button onClick={handleUrl} className="button max-md:p-3">Shorten URL</button>
           </form>
           </div>
           {
             isshorturl ?
-            <div className="out-shorturl"> 
-              <h3>Short URL :</h3>
-              <div className="shorturl"><h3 id="url"> http://localhost:3000/{shortUrl}</h3>
-              <button onClick={copyText} id="button">Copy URL</button></div>
+            <div className="flex mt-16 justify-center items-center w-full"> 
+              <h3 className="mr-2">Short URL :</h3>
+                <input type="text" value={`http://localhost:3000/${shortUrl}`} id="url" className="bg-gradient-to-r from-slate-400 to-slate-300 border-2 border-t-blue-600 border-b-yellow-400 border-l-yellow-400 rounded-l-full p-4 outline-none w-[300px] text-red-600" disabled/>
+                <button onClick={copyText} id="button" className="p-4 bg-gradient-to-r from-blue-600 to-blue-400 rounded-r-full text-white border-2 border-blue-500">Copy URL</button>
             </div>
             : null
           }

@@ -4,7 +4,8 @@ import Login from "./components/Login";
 import Registration from "./components/Registration";
 import { Routes, Route } from "react-router-dom";
 import {RedirectUrl} from './components/redirecturl';
-import Analytics from "./components/Analytics";
+import Analytics from "./screens/Analytics";
+import QRCode from "./screens/QRCode";
 // import { useLogginContext } from "./context/userlogin";
 
 function App() {
@@ -15,6 +16,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/:shorturl" element={<RedirectUrl />}/>
         <Route path="/analysis" element={<Analytics />}/>
+        <Route path="/qrcode" element={<QRCode />}/>
         <Route path="user">
           <Route path="signup" element={<Registration />} />
           <Route path="login" element={<Login />} />

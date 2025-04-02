@@ -135,7 +135,7 @@ nav ul .link:hover{
 .main-container{
   display: flex;
   align-items: center;
-  margin-top: 10%;
+  justify-content:center;
   flex-direction: column;
   height: 100vh;
   width: 100%;
@@ -155,25 +155,23 @@ nav ul .link:hover{
 .url-input{
   width: 40%;
   padding: 15px;
-  border-top-left-radius: 20px;
-  border-bottom-left-radius: 20px;
   color: rgb(46, 46, 46);
   font-size: larger;
   padding-left: 20px;
   outline: none;
-  @apply bg-gradient-to-r from-slate-400 to-slate-300 border-2 border-t-blue-600 border-b-yellow-400 border-l-yellow-400
+  @apply bg-gradient-to-r from-slate-400 to-slate-300 border-2 border-t-blue-600 border-b-yellow-400 border-l-yellow-400 rounded-l-full  max-md:w-[60%] max-md:p-3 max-md:text-sm
 }
 .main-container input::placeholder{
   color: rgba(3, 3, 3, 0.368);
 }
-.main-container button{
+.main-container .button{
   border: 0;
   border-top-right-radius: 20px;
   border-bottom-right-radius: 20px;
   padding: 20px;
   color:white;
   font-size: medium;
-  @apply bg-gradient-to-r from-blue-500 to-blue-600
+  @apply bg-gradient-to-r from-blue-500 to-blue-600 max-md:p-3 max-md:text-sm
 }
 
 .main-container button:hover{
@@ -211,6 +209,7 @@ nav ul .link:hover{
 }
 .shorturl button{
   justify-content: end;
+  /* @apply  */
 }
 .out-shorturl{
   display: flex;
@@ -227,9 +226,9 @@ h2,.analytics-Container{
 }
 table{
   border-collapse: collapse;
-  width: 80%;
+  width: 500px;
   text-align: center;
-  
+  @apply max-md:w-[10%]
 }
 table th,td{
   /* border: 2px solid white; */
@@ -240,4 +239,9 @@ table th,td{
   width: 100%;
   display: flex;
   flex-direction: column;
+}
+.qrinput{
+  @apply w-[40%] p-4 pl-8 rounded-l-full bg-gradient-to-r from-slate-400 to-slate-300 border-2
+   border-t-blue-600 border-b-yellow-400 border-l-yellow-400 text-black outline-none 
+  placeholder:text-slate-500 text-lg
 }

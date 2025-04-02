@@ -6,13 +6,13 @@ const Navbar = () => {
   const LogginDetails = useLogginContext();
 
   useEffect(() => {
-    if(document.cookie.startsWith("uid" + "=")) {
+    if(document.cookie.startsWith("uid=")) {
       LogginDetails.setIsLoggedin(true);
     }
     else{
       LogginDetails.setIsLoggedin(false);
     }
-  },[]);
+  });
 
   const loggout = async () => {
     try {
@@ -40,7 +40,7 @@ const Navbar = () => {
         <Link to={"/analysis"} className="link">
           Analytics
         </Link>
-        <Link to={"/"} className="link">
+        <Link to={"/qrcode"} className="link">
           QR Generator
         </Link>
       </ul>

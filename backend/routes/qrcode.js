@@ -3,4 +3,4 @@ import { GenerateQRCode } from "../controller/qrcode.js";
 
 export const qrrouter = Router();
 
-qrrouter.get("/",GenerateQRCode);
+qrrouter.post("/",GenerateQRCode);
