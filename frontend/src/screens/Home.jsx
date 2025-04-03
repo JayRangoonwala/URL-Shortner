@@ -34,7 +34,7 @@ const Home = () => {
 
     if(UrlValidation(url.url)){
       try{
-        const response = await fetch("https://url-shortner-exa9.onrender.com/url",{
+        const response = await fetch("https://url-shortner-2-eqx2.onrender.com/url",{
           method:"post",
           headers:{
             "Content-Type" : "application/json"

@@ -38,7 +38,7 @@ const QRCode = () => {
 
     if (handleLoggin() && handleValidation(url)) {
       try {
-        const response = await fetch("https://url-shortner-exa9.onrender.com/qrcode", {
+        const response = await fetch("https://url-shortner-2-eqx2.onrender.com/qrcode", {
           method: "post",
           headers: {
             "Content-Type": "application/json",

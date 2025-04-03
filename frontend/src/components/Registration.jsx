@@ -33,7 +33,7 @@ const Registration = () => {
     e.preventDefault();
 
     if (validatePassword(signupData.password, signupData.cpassword)) {
-      const response = await fetch("https://url-shortner-exa9.onrender.com/user/signup", {
+      const response = await fetch("https://url-shortner-2-eqx2.onrender.com/user/signup", {
         method: "post",
         headers: {
           "Content-Type": "application/json",

@@ -17,7 +17,7 @@ const Navbar = (Page) => {
 
   const loggout = async () => {
     try {
-      const response = await fetch("https://url-shortner-exa9.onrender.com/user/loggout", {
+      const response = await fetch("https://url-shortner-2-eqx2.onrender.com/user/loggout", {
         method: "post",
         credentials: "include",
       });
