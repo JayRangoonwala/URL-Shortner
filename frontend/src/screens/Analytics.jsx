@@ -32,8 +32,8 @@ const Analytics = () => {
   });
 
   return (
-    <div className="max-lg:text-sm px-4">
-      <Navbar />
+    <div className="max-lg:text-sm sm:px-4">
+      <Navbar Page="Analytics"/>
       <h2 className="mt-14 text-2xl text-center">Analytics</h2>
       <div className="analytics-Container mt-5 pb-10 overflow-x-auto">
         <table className="w-full border-collapse border border-gray-300">

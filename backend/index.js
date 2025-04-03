@@ -20,7 +20,7 @@ app.use("/user",userrouter);
 app.use("/analysis",analyticRouter);
 app.use("/qrcode",qrrouter);
 
-Connect("mongodb://localhost:27017/ShortnerUrl")
+Connect(process.env.MONGODB_URI)
 .then(() => console.log("MongoDb Connected !!"));
 
 app.listen(PORT ,(req, res) => {

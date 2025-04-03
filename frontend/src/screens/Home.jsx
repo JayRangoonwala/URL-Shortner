@@ -72,7 +72,7 @@ const Home = () => {
   return (
       <div className="home">
         <header className="absolute top-0 w-full">
-          <Navbar/>
+          <Navbar Page="Home"/>
         </header>
         <div className="main-container">
           <h1 className="mb-2 text-lg">Paste the URL to be shortened</h1>

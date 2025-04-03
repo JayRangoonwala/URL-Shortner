@@ -79,7 +79,7 @@ const QRCode = () => {
   return (
     <div className="">
       <header className="absolute top-0 w-full">
-        <Navbar />
+        <Navbar Page="QRCode"/>
       </header>
       <main className="flex flex-col justify-center items-center h-screen w-full">
         <h1 className="mb-3 text-lg text-slate-700">
