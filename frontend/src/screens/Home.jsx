@@ -86,7 +86,7 @@ const Home = () => {
             isshorturl ?
             <div className="flex mt-16 justify-center items-center w-full"> 
               <h3 className="mr-2">Short URL :</h3>
-                <input type="text" value={`http://localhost:3000/${shortUrl}`} id="url" className="bg-gradient-to-r from-slate-400 to-slate-300 border-2 border-t-blue-600 border-b-yellow-400 border-l-yellow-400 rounded-l-full p-4 outline-none w-[300px] text-red-600" disabled/>
+                <input type="text" value={`https://tinyyqr.vercel.app/${shortUrl}`} id="url" className="bg-gradient-to-r from-slate-400 to-slate-300 border-2 border-t-blue-600 border-b-yellow-400 border-l-yellow-400 rounded-l-full p-4 outline-none w-[300px] text-red-600" disabled/>
                 <button onClick={copyText} id="button" className="p-4 bg-gradient-to-r from-blue-600 to-blue-400 rounded-r-full text-white border-2 border-blue-500">Copy URL</button>
             </div>
             : null
