@@ -7,7 +7,7 @@ export const RedirectUrl = () => {
 
     useEffect(() => {
         const fetchData = async() => {
-            const response = await fetch(`http://localhost:8000/url/${shorturl}`,{
+            const response = await fetch(`https://url-shortner-exa9.onrender.com/url/${shorturl}`,{
                 method:"get",
                 headers:{
                     "Content-Type":"application/json"
