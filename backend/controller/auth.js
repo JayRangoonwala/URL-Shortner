@@ -52,7 +52,7 @@ export const handleUserLogin = async (req, res) => {
     }
     res.cookie("uid",token,{
       httpOnly: false,
-      secure: false, // Use true in production with HTTPS
+      secure: true, // Use true in production with HTTPS
       sameSite: "lax",
     });
     return res
