@@ -53,7 +53,7 @@ export const handleUserLogin = async (req, res) => {
     res.cookie("uid",token,{
       httpOnly: false,  // Prevent client-side access
       secure: true,  // Set to true in production (requires HTTPS) 
-      sameSite: "Lax",
+      sameSite: "None",
       maxAge: 60 * 60 * 1000, // 1 hour
     });
     return res
