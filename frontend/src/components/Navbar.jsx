@@ -1,7 +1,7 @@
 import React, { useState,useEffect } from "react";
 import { Link } from "react-router-dom";
 import { useLogginContext } from "../context/userlogin";
-import {Menu} from 'lucide-react'
+import {Menu} from 'lucide-react';
 
 const Navbar = (Page) => {
   const [dropdownOpen, setDropdownOpen] = useState(false);
