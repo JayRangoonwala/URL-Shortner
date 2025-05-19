@@ -1,19 +1,19 @@
 import React, { useState,useEffect } from "react";
 import { Link } from "react-router-dom";
-import { useLogginContext } from "../context/userlogin";
+// import { useLogginContext } from "../context/userlogin";
 import {Menu} from 'lucide-react';
 
 const Navbar = (Page) => {
   const [dropdownOpen, setDropdownOpen] = useState(false);
-  const LogginDetails = useLogginContext();
+  // const LogginDetails = useLogginContext();
 
-  useEffect(() => {
-    if (document.cookie.startsWith("uid=")) {
-      LogginDetails.setIsLoggedin(true);
-    } else {
-      LogginDetails.setIsLoggedin(false);
-    }
-  });
+  // useEffect(() => {
+  //   if (document.cookie.startsWith("uid=")) {
+  //     LogginDetails.setIsLoggedin(true);
+  //   } else {
+  //     LogginDetails.setIsLoggedin(false);
+  //   }
+  // });
 
   const loggout = async () => {
     try {
@@ -24,7 +24,6 @@ const Navbar = (Page) => {
       if (response.ok) {
         const data = await response.json();
         alert(data.message);
-        LogginDetails.setIsLoggedin(false);
       }
     } catch (error) {
       console.log(error);
@@ -75,7 +74,7 @@ const Navbar = (Page) => {
         )}
       </ul>
       <div className="flex gap-2">
-        {LogginDetails.isLoggedin ? (
+        {/* {LogginDetails.isLoggedin ? (
           <button
             onClick={loggout}
             className="bg-blue-600 rounded-full text-white p-2 px-3 hover:scale-[1.02]"
@@ -97,7 +96,7 @@ const Navbar = (Page) => {
               Login
             </Link>
           </ul>
-        )}
+        )} */}
         <div className="relative">
         <button className="sm:hidden text-white mt-2" onClick={handleMenu}>
           <Menu size={24} />

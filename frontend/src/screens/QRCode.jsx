@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Navbar from "../components/Navbar";
-import { useLogginContext } from "../context/userlogin";
+// import { useLogginContext } from "../context/userlogin";
 import { useNavigate } from "react-router-dom";
 
 const QRCode = () => {
@@ -8,20 +8,20 @@ const QRCode = () => {
   const [qrcode, setQRCode] = useState("");
   const [url, setUrl] = useState({ url: "" });
   const navigate = useNavigate();
-  const LogginDetails = useLogginContext();
+  // const LogginDetails = useLogginContext();
 
   const handleURL = (e) => {
     setUrl({ ...url, [e.target.name]: e.target.value });
   };
 
-  const handleLoggin = () => {
-    if (LogginDetails.isLoggedin === false) {
-      alert("Please Login First !!!");
-      navigate("/user/login");
-      return false;
-    }
-    return true
-  };
+  // const handleLoggin = () => {
+    // if (LogginDetails.isLoggedin === false) {
+    //   alert("Please Login First !!!");
+    //   navigate("/user/login");
+    //   return false;
+    // }
+    // return true
+  // };
 
   const handleValidation = (url) => {
 
@@ -36,7 +36,7 @@ const QRCode = () => {
   const handleQRCode = async (e) => {
     e.preventDefault();
 
-    if (handleLoggin() && handleValidation(url)) {
+    if (handleValidation(url)) {
       try {
         const response = await fetch("https://url-shortner-2-eqx2.onrender.com/qrcode", {
           method: "post",

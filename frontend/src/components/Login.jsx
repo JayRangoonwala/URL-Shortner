@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { useLogginContext } from "../context/userlogin";
+// import { useLogginContext } from "../context/userlogin";
 import Navbar from "./Navbar";
 
 const Login = () => {
   
-  const LogginDetails = useLogginContext();
+  // const LogginDetails = useLogginContext();
 
   const [loginData, setLoginData] = useState({ email: "", password: "" });
   const navigate = useNavigate();
@@ -29,7 +29,7 @@ const Login = () => {
       setTimeout(async() => {
         navigate("/");
         const data = await response.json();
-        LogginDetails.setIsLoggedin(data.token)
+        // LogginDetails.setIsLoggedin(data.token)
       }, 100);
     } else {
       const data = await response.json();

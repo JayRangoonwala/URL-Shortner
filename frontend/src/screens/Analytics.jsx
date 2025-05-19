@@ -1,22 +1,22 @@
 import React, { useEffect, useState } from "react";
 import "../App.css";
 import Navbar from "../components/Navbar";
-import { useLogginContext } from "../context/userlogin";
+// import { useLogginContext } from "../context/userlogin";
 import { useNavigate } from "react-router-dom";
 
 const Analytics = () => {
   const [data, setData] = useState([]);
-  const LogginDetails = useLogginContext();
+  // const LogginDetails = useLogginContext();
   const navigate = useNavigate();
 
   useEffect(() => {
     const fetchData = async () => {
       try {
 
-        if(LogginDetails.isLoggedin === false){
-          alert("Please Login First !!!");
-          return navigate('/user/login');
-        }
+        // if(LogginDetails.isLoggedin === false){
+        //   alert("Please Login First !!!");
+        //   return navigate('/user/login');
+        // }
 
         const response = await fetch("https://url-shortner-2-eqx2.onrender.com/analysis", {
           method: "get",
